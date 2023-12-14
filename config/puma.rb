@@ -40,13 +40,8 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 # preload_app!
 
 # Allow puma to be restarted by `rails restart` command.
-
-
-
-
-
 plugin :tmp_restart
-extend Puma::DSL
+
 bind "unix://#{Rails.root}/tmp/sockets/puma.sock"
 rails_root = Dir.pwd
 # 本番環境のみデーモン起動
