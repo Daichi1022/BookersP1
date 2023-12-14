@@ -46,6 +46,7 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 
 
 plugin :tmp_restart
+extend Puma::DSL
 bind "unix://#{Rails.root}/tmp/sockets/puma.sock"
 rails_root = Dir.pwd
 # 本番環境のみデーモン起動
